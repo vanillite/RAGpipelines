@@ -61,7 +61,7 @@ This notebook handles the retrieval and inference process. It:
 - Stores the results in a dataframe with pickle checkpoints for evaluation
 - Iterates this process over all possible combination of techniques:
   - LLMs (e.g., `gpt-4.1`, `gpt-4o`)
-  - Query transformation (e.g., q
+  - Query transformation (e.g., query rewriting, query decomposition, query expansion)
   - Agentic retrieval (`True` or `False`)
   - Reranking (e.g., `reciprocal rank fusion`, `bge-reranker-v2-m3`)
 
