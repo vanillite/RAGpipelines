@@ -47,7 +47,7 @@ This notebook handles the creation and configuration of Azure AI Search componen
   - Skillsets
  
 ### Output
-It produces multiple AI Search indexes that are ready to use through retrieval.
+The notebook produces multiple AI Search indexes that are ready to use through retrieval.
 
 ## 2. `RAG_inference_pipeline.ipynb`
 
@@ -66,7 +66,7 @@ This notebook handles the retrieval and inference process. It:
   - Reranking (e.g., `reciprocal rank fusion`, `bge-reranker-v2-m3`)
 
 ### Output
-It produces a `full_dataframe_pickle` containing:
+The notebook produces a dataframe containing:
 - Original query
 - Ground truth answer
 - Generated response
@@ -81,7 +81,7 @@ For cases where the objective is to utilize the RAG system without performing ev
 ### Description
 This notebook evaluates the inference results by comparing them against ground truths. It:
 - Loads:
-  - Inference results (`full_dataframe_pickle`).
+  - Inference results dataframe.
   - Document containing user query and ground truths.
 - Merges the two datasets based on queries.
 - Calculates:
@@ -90,6 +90,4 @@ This notebook evaluates the inference results by comparing them against ground t
 - Groups results by by various methods to output averaged scores.
 
 ### Output
-It generates multiple dataframes for the evaluation metrics and various groupby methods. 
-
-Results can optionally be used for additional significance testing (`statistical_tests.py`).
+The notebook generates multiple dataframes for the evaluation metrics and various groupby methods. Results can optionally be used for additional significance testing (`statistical_tests.py`).
