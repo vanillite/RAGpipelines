@@ -33,7 +33,7 @@ Agentic retrieval and reranking methods can be enabled or disabled. Using altern
 
 # Pipelines
 
-## 1. Generation Pipeline - `RAG_generation_pipeline.ipynb`
+## 1. `RAG_generation_pipeline.ipynb`
 
 ### Description
 This notebook handles the creation and configuration of Azure AI Search components. Specifically, it:
@@ -49,7 +49,7 @@ This notebook handles the creation and configuration of Azure AI Search componen
 ### Output
 It produces multiple AI Search indexes that are ready to use through retrieval.
 
-## 2. Inference Pipeline – `RAG_inference_pipeline.ipynb`
+## 2. `RAG_inference_pipeline.ipynb`
 
 ### Description
 This notebook handles the retrieval and inference process. It:
