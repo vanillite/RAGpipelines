@@ -91,3 +91,9 @@ This notebook evaluates the inference results by comparing them against ground t
 
 ### Output
 The notebook generates multiple dataframes for the evaluation metrics and various groupby methods. Results can optionally be used for additional significance testing (`statistical_tests.py`).
+
+## Miscellaneous
+
+The resulting dataframe from the evaluation pipeline can be optionally used for additional significance testing using `statistical_tests.py`. This file performs t-tests and Tukey's HSD tests to compare the mean score of different groups.
+
+The `score.py` script is used to deploy a custom embedding model in Azure Machine Learning Studio. It ensures that data is correctly formatted when sent to and received from AI Search.
