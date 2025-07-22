@@ -1,6 +1,6 @@
 # Automatic RAG system evaluation pipeline
 
-This repository consists of three RAG pipelines that support holistic testing and evaluation of various RAG optimization techniques, iterating over every possible combination of techniques specified. This main system consists of these three pipelines:
+This repository consists of RAG pipelines that support holistic testing and evaluation of various RAG optimization techniques, iterating over every possible combination of techniques specified. This main system consists of these three pipelines:
 
 1. **Generation** - Builds vector indexes/databases in Azure AI Search based on your selection of embedding models and search algorithms.
 2. **Inference** - Orchestrates the in-retrieval and post-retrieval workflows to enable user inference on the RAG system, based on your selection of LLMs, agentic retrieval, and reranking methods.
