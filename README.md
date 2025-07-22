@@ -53,12 +53,12 @@ It produces multiple AI Search indexes that are ready to use through retrieval.
 
 ### Description
 This notebook handles the retrieval and inference process. It:
-- Contains the prompts and strucutered output schemas for LLMs
-- Routes user queries to the correct workflow via agentic retrieval
-- Embeds user queries and connects to the Azure AI Search indexes to use the queries for document retrieval
-- Reranks the top N retrieved documents
-- Forwards the top K reranked documents for final LLM response generation
-- Stores the results in a dataframe with pickle checkpoints for evaluation
+- Contains the prompts and strucutered output schemas for LLMs.
+- Routes user queries to the correct workflow via agentic retrieval.
+- Embeds user queries and connects to the Azure AI Search indexes to use the queries for document retrieval.
+- Reranks the top N retrieved documents.
+- Forwards the top K reranked documents for final LLM response generation.
+- Stores the results in a dataframe with pickle checkpoints for evaluation.
 - Iterates this process over all possible combination of techniques:
   - LLMs (e.g., `gpt-4.1`, `gpt-4o`)
   - Query transformation (e.g., query rewriting, query decomposition, query expansion)
@@ -72,3 +72,24 @@ It produces a `full_dataframe_pickle` containing:
 - Generated response
 - Run time
 - Additional metadata
+
+### Optional usage
+For cases where the objective is to utilize the RAG system without performing evaluations, the `retrieve` function can be invoked directly, and subsequent cells in the notebook can be skipped. 
+
+## 3. `RAG_evaluation_pipeline.ipynb`
+
+### Description
+This notebook evaluates the inference results by comparing them against ground truths. It:
+- Loads:
+  - Inference results (`full_dataframe_pickle`).
+  - Document containing user query and ground truths.
+- Merges the two datasets based on queries.
+- Calculates:
+  - **ROUGE-1** and **ROUGE-L** scores.
+  - **RAGAs** metrics (faithfulness, context recall, and cobtext precision).
+- Groups results by by various methods to output averaged scores.
+
+### Output
+It generates multiple dataframes for the evaluation metrics and various groupby methods. 
+
+Results can optionally be used for additional significance testing (`statistical_tests.py`).
