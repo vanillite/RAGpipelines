@@ -22,7 +22,7 @@ This system supports the interchangability and testing of the following techniqu
 - Embedding model
 - Search algorithm
 - LLM
-- Agentic retrieval
+- Agentic retrieval with query transformation
 - Reranking
 
 Embedding models, search algorithms, and LLMs provided by Azure can be seamlessly interchanged by specifying their names in the corresponding configuration variables.
