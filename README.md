@@ -86,7 +86,7 @@ This notebook evaluates the inference results by comparing them against ground t
 - Merges the two datasets based on queries.
 - Calculates:
   - **ROUGE-1** and **ROUGE-L** scores.
-  - **RAGAs** metrics (faithfulness, context recall, and cobtext precision).
+  - **RAGAs** metrics (faithfulness, context recall, and context precision).
 - Groups results by by various methods to output averaged scores.
 
 ### Output
