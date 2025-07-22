@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 ## Azure configuration
 
-Create a config.json file with the Azure endpoints, keys, and connections.
+Create a config.json file to store the Azure endpoints, access keys, and connection details.
 
 ## RAG techniques configuration 
 This system supports the interchangability and testing of the following techniques:
