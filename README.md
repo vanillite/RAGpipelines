@@ -33,10 +33,12 @@ Agentic retrieval and reranking methods can be enabled or disabled. Using altern
 
 # Pipelines
 
-## 1. Generation pipeline - RAG_generation_pipeline.ipynb
+## 1. Generation Pipeline - `RAG_generation_pipeline.ipynb`
+
+### Description
 This notebook handles the creation and configuration of Azure AI Search components. Specifically, it:
 - Connects to Azure AI Search and links the specified database.
-- Iterates over various combinations of:
+- Iterates over various techniques to create the vector database:
   - Embedding models (e.g., `text-embedding-3-large`, `custom-embedding-model`)
   - Search algorithms (e.g., `HNSW`, `ExhaustiveKNN`)
 - Constructs and uploads the following for each combination of techniques:
@@ -46,3 +48,27 @@ This notebook handles the creation and configuration of Azure AI Search componen
  
 ### Output
 It produces multiple AI Search indexes that are ready to use through retrieval.
+
+## 2. Inference Pipeline – `RAG_inference_pipeline.ipynb`
+
+### Description
+This notebook handles the retrieval and inference process. It:
+- Contains the prompts and strucutered output schemas for LLMs
+- Routes user queries to the correct workflow via agentic retrieval
+- Embeds user queries and connects to the Azure AI Search indexes to use the queries for document retrieval
+- Reranks the top N retrieved documents
+- Forwards the top K reranked documents for final LLM response generation
+- Stores the results in a dataframe with pickle checkpoints for evaluation
+- Iterates this process over all possible combination of techniques:
+  - LLMs (e.g., `gpt-4.1`, `gpt-4o`)
+  - Query transformation (e.g., q
+  - Agentic retrieval (`True` or `False`)
+  - Reranking (e.g., `reciprocal rank fusion`, `bge-reranker-v2-m3`)
+
+### Output
+It produces a `full_dataframe_pickle` containing:
+- Original query
+- Ground truth answer
+- Generated response
+- Run time
+- Additional metadata
