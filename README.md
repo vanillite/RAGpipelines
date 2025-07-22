@@ -90,7 +90,7 @@ This notebook evaluates the inference results by comparing them against ground t
 - Groups results by by various methods to output averaged scores.
 
 ### Output
-The notebook generates multiple dataframes for the evaluation metrics and various groupby methods. Results can optionally be used for additional significance testing (`statistical_tests.py`).
+The notebook generates multiple dataframes for the evaluation metrics and various groupby methods.
 
 ## Miscellaneous
 
